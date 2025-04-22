@@ -1,0 +1,20 @@
+<header>
+    <!-- <app-scroll-nav-bar></app-scroll-nav-bar> -->
+</header>
+<body>
+    <main>
+        <img class="img-fundo" src="/img/ranger.png" alt="Logo Ford">
+        <section>
+            <h2>Sistemas de Dados  Ford</h2>
+            <h3>Seja bem vindo(a)!</h3>
+        </section>
+        <div>
+          <h1>Tabelas do Banco de Dados</h1>
+          <ul>
+            <li *ngFor="let table of tables">
+              {{ table.name }}
+            </li>
+          </ul>
+        </div>
+    </main>
+</body>
