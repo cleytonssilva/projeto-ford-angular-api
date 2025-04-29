@@ -18,6 +18,9 @@
       <option value="Mustang">Mustang</option>
       <option value="Territory">Territory</option>
       <option value="Bronco Sport">Bronco Sport</option>
+      <option value="F-150">F-150</option>
+      <option value="Explorer">Explorer</option>
+      <option value="Edge">Edge</option>
     </select>
     <button class="btn-search" (click)="verificarInput()">Buscar</button>
     <!-- <button **ngIf="select-veiculo" class="btn-search" click="verificarInput()" >Buscar</button> -->
@@ -45,6 +48,12 @@
       src="/img/ranger.png"
       alt="Ford Ranger"
     />
+    <img
+      *ngIf="mostrarImagem && inputVeiculo === 'Explorer'"
+      class="img-dashboard"
+      src="https://vehicle-images.dealerinspire.com/stock-images/ford/42af4cea2c34e4a0a57ca2438925f53a.png"
+      alt="Explorer"
+    />
   </section>
 
   <!-- <h2>Informações do Veículo</h2> -->
@@ -56,23 +65,21 @@
     <p *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
     <p>Update Software:</p>
     <p *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
-  </div>
+    <p>Código Vin:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoVin }}</p>
+    <p>Odômetro:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoOdometro }}</p>
+    <p>Nível Combustível:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoCombustivel }}</p>
+    <p>Status:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoStatus }}</p>
+    <p>Latitude:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
+    <p>Longitude:</p>
+    <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
 
-  <footer>
-    <div class="card-footer">
-      <p>Código Vin:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoVin }}</p>
-      <p>Odômetro:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoOdometro }}</p>
-      <p>Nível Combustível:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoCombustivel }}</p>
-      <p>Status:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoStatus }}</p>
-      <p>Latitude:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
-      <p>Longitude:</p>
-      <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
+
     </div>
-  </footer>
+
 
 </main>
