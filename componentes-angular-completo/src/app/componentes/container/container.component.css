@@ -8,16 +8,11 @@ main{
     height: 100dvh;
     border-radius: 16px;
     background: #F8F9FA;
-    box-shadow: 0px 8px 16px 0px rgba(61, 139, 253, 0.15);
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 56px 134px;
-    margin-top: 0 auto;
-    box-sizing: border-box;
+
 }
 
 
-.container {
+/* .container {
 
     display: flex;
     flex-direction: column;
@@ -28,8 +23,14 @@ main{
     border-radius: 16px;
     background: #F8F9FA;
     margin-bottom: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(61, 139, 253, 0.15);
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 56px 134px;
+    margin-top: 0 auto;
+    box-sizing: border-box;
 
-}
+} */
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
