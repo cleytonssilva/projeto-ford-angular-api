@@ -18,8 +18,9 @@
 
         <form (ngSubmit)="onSubmit()">
           <div class="mb-3">
-            <label for="email" class="form-label" placeholder="Digite seu email">Digite seu email:</label>
+            <label for="email" class="form-label" ></label>
             <input
+              placeholder="Digite seu email"
               type="email"
               id="email"
               [(ngModel)]="email"
@@ -29,8 +30,9 @@
             />
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label" placeholder="Digite sua senha" >Digite sua senha:</label>
+            <label for="password" class="form-label" ></label>
             <input
+              placeholder="Digite sua senha"
               type="password"
               id="password"
               [(ngModel)]="password"
