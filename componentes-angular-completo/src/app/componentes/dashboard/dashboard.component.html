@@ -1,6 +1,6 @@
 <header>
   <h1>Dashboard FORD</h1>
-  <div class="main-menu-content">
+  <!-- <div class="main-menu-content">
     <ul>
       <li class="more-details" >
         <a ><i class="ti-user"></i>View Profile</a>
@@ -8,15 +8,12 @@
         <a ><i class="ti-layout-sidebar-left"></i>Logout</a>
       </li>
     </ul>
-  </div>
+  </div> -->
   <app-scroll-nav-bar></app-scroll-nav-bar>
 </header>
 <main>
 
   <section>
-    <!-- <input [ngModel]="inputVeiculo" type="text" placeholder="Buscar" class="input-veiculo" id="input-veiculo" > -->
-
-    <!-- <input type="text" placeholder="Buscar" class="input-veiculo" id="input-veiculo" [ngModel]="inputVeiculo" (ngModelChange)="inputVeiculo = $event" /> -->
     <select
       class="select-veiculo"
       id="select-veiculo"
@@ -58,17 +55,10 @@
       src="/img/ranger.png"
       alt="Ford Ranger"
     />
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Explorer'"
-      class="img-dashboard"
-      src="https://vehicle-images.dealerinspire.com/stock-images/ford/42af4cea2c34e4a0a57ca2438925f53a.png"
-      alt="Explorer"
-    />
   </section>
 
-  <!-- <h2>Informações do Veículo</h2> -->
+
   <div class="card">
-    <!-- <h3>Modelo: {{inputVeiculo}}</h3> -->
     <p>Total de Vendas:</p>
     <p *ngIf="mostrarImagem">{{ volumeVendas }}</p>
     <p>Conectados:</p>
