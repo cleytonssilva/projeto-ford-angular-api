@@ -3,12 +3,14 @@ import { CabecalhoComponent } from "../cabecalho/cabecalho.component";
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+
 // import { NgModule } from '@angular/core';
 
 
 @Component({
   selector: 'app-container',
-  imports: [CabecalhoComponent, CommonModule, FormsModule],
+  imports: [CabecalhoComponent, CommonModule, FormsModule, ],
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css',]
 })

@@ -1,17 +1,69 @@
-<header>
-  <h1>Dashboard FORD</h1>
-  <div class="main-menu-content">
-    <ul>
-      <li class="more-details" >
-        <a ><i class="ti-user"></i>View Profile</a>
-        <a ><i class="ti-settings"></i>Settings</a>
-        <a ><i class="ti-layout-sidebar-left"></i>Logout</a>
-      </li>
-    </ul>
-  </div>
+
+
   <app-scroll-nav-bar></app-scroll-nav-bar>
-</header>
-<main>
+  
+  <!-- <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Total de Vendas</h5>
+    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+    <p class="card-text" *ngIf="mostrarImagem"> {{ volumeVendas }}</p>
+  </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Conectados</h5>
+    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+    <p class="card-text" *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
+  </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Update Software</h5>
+    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+    <p *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
+  </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total de Vendas</h5>
+          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+          <p class="card-text" *ngIf="mostrarImagem"> {{ volumeVendas }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Conectados</h5>
+          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+          <p class="card-text" *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Update Sotware</h5>
+          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+          <p class="card-text" *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+  
+
+
+
+
 
   <section>
     <!-- <input [ngModel]="inputVeiculo" type="text" placeholder="Buscar" class="input-veiculo" id="input-veiculo" > -->
@@ -28,9 +80,6 @@
       <option value="Mustang">Mustang</option>
       <option value="Territory">Territory</option>
       <option value="Bronco Sport">Bronco Sport</option>
-      <option value="F-150">F-150</option>
-      <option value="Explorer">Explorer</option>
-      <option value="Edge">Edge</option>
     </select>
     <button class="btn-search" (click)="verificarInput()">Buscar</button>
     <!-- <button **ngIf="select-veiculo" class="btn-search" click="verificarInput()" >Buscar</button> -->
@@ -58,23 +107,14 @@
       src="/img/ranger.png"
       alt="Ford Ranger"
     />
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Explorer'"
-      class="img-dashboard"
-      src="https://vehicle-images.dealerinspire.com/stock-images/ford/42af4cea2c34e4a0a57ca2438925f53a.png"
-      alt="Explorer"
-    />
   </section>
 
-  <!-- <h2>Informações do Veículo</h2> -->
-  <div class="card">
-    <!-- <h3>Modelo: {{inputVeiculo}}</h3> -->
-    <p>Total de Vendas:</p>
-    <p *ngIf="mostrarImagem">{{ volumeVendas }}</p>
-    <p>Conectados:</p>
-    <p *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
-    <p>Update Software:</p>
-    <p *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
+
+
+<!-- <h2>Informações do Veículo</h2> -->
+  <!-- <div class="card">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+    <button class="btn btn-outline-success" type="submit">Search</button>
     <p>Código Vin:</p>
     <p *ngIf="mostrarImagem">{{ veiculoVin }}</p>
     <p>Odômetro:</p>
@@ -87,11 +127,7 @@
     <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
     <p>Longitude:</p>
     <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
+    
+    
 
-
-    </div>
-
-
-
-
-</main>
+    </div> -->
