@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./scroll-nav-bar.component.css']
 })
 export class ScrollNavBarComponent {
+  constructor(private router: Router) {}
+
+  logout() {
+    sessionStorage.removeItem('token');
+    localStorage.removeItem('logarAuto');
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 
 }

@@ -14,10 +14,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css',]
 })
+
+
 export class ContainerComponent {
-  email: string = '';
-  password: string = '';
-  // logarAuto: boolean = false;
+  inputEmail: string = '';
+  inputPassword: string = '';
+  logarAuto: boolean = false;
+
+
+  constructor(private router: Router) {
+    this.logarAuto = false;
+  }
 
   async ngOnInit() {
     fetch('http://localhost:3000/api/table/user')
@@ -54,37 +61,37 @@ export class ContainerComponent {
   }
 
 
-  constructor(private router: Router) {
-
-  }
-  // ngOnInit(logarAuto: boolean = false) {
-
-
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     this.router.navigate(['/dashboard']);
-  //   }
-  //   else {
-  //     this.router.navigate(['/login']);
-  //   }
-  // }
-
-
   onSubmit() {
 
 
     // Simulação de autenticação
-    if (this.email === 'admin@example.com' && this.password === 'password') {
-
+    if (this.inputEmail === 'admin@example.com' && this.inputPassword === 'password') {
+      // Armazenar o token no localStorage
       localStorage.setItem('token', 'fake-jwt-token');
       this.router.navigate(['/dashboard']);
     } else {
       alert('Credenciais inválidas');
     }
   }
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+
+  // logarAuto(logarAuto: boolean = false) {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     this.router.navigate(['/dashboard']);
+  //   } else {
+  //     this.router.navigate(['/login']);
+  //   }
+  // }
+
+  logarAutoChange() {
+    if (this.logarAuto) {
+      localStorage.setItem('token', 'fake-jwt-token');
+      this.router.navigate(['/dashboard']);
+    } else {
+      localStorage.removeItem('token');
+      this.router.navigate(['/login']);
+    }
   }
+
   userData!: any;
 }

@@ -3,7 +3,12 @@
     <app-cabecalho></app-cabecalho>
   </section>
   <h1>Boas-vindas</h1>
+<<<<<<< HEAD
   <div class="container mt-2">
+=======
+
+  <div class="container mt-7">
+>>>>>>> 97879227d2aabad474b2a869c1e09e099e0c60b2
     <div class="row justify-content-center">
       <div class="col-md-9 ">
         <form (ngSubmit)="onSubmit()">
@@ -17,7 +22,7 @@
               placeholder="Digite seu email"
               type="email"
               id="email"
-              [(ngModel)]="email"
+              [(ngModel)]="inputEmail"
               name="email"
               class="form-control"
               required
@@ -30,12 +35,13 @@
               placeholder="Digite sua senha"
               type="password"
               id="password"
-              [(ngModel)]="password"
+              [(ngModel)]="inputPassword"
               name="password"
               class="form-control"
               required
             />
           </div>
+<<<<<<< HEAD
           <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
             <label class="form-check-label" for="switchCheckDefault">Logar automático</label>
@@ -45,6 +51,29 @@
             </svg>
           </div>
           <button id="botao_login" type="submit" class="btn btn-primary w-100">Entrar</button>
+=======
+          <button type="submit" class="btn btn-primary w-100" >Login</button>
+          <!-- <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="(password)"
+                  [attr.aria-label]="password ? 'Ocultar senha' : 'Mostrar senha'"
+                  [attr.title]="password ? 'Ocultar senha' : 'Mostrar senha'"
+                >
+                  <i class="bi" [ngClass]="password ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button> -->
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="rememberMe"
+              [(ngModel)]="inputEmail"
+              [ngModelOptions]="{standalone: true}"
+              onchange="onCheckboxChange($event)"
+            >
+            <label class="form-check-label" for="rememberMe">Logar automaticamente</label>
+          </div>
+>>>>>>> 97879227d2aabad474b2a869c1e09e099e0c60b2
         </form>
       </div>
     </div>

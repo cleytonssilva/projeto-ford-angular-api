@@ -75,13 +75,18 @@ export class DashboardComponent {
         this.mostrarImagem = true;
       }
 
-      // const encontradoData = this.respostaveiculoData.find(
-      //   (veiculoData: any) =>
-      //     veiculoData.vehicledata_id === this.inputVeiculoData
+      // Verifica se o VIN está na lista de dados dos veículos
+      // const vinEncontrado = this.respostaveiculo.find(
+      //   (veiculoVin: any) => veiculo.vehicledata_vin === this.inputVeiculoVin
       // );
+      // if (vinEncontrado) {
+      //   this.mostrarDados = true;
+      // } else {
+      //   this.mostrarDados = false;
+      // }
 
       for (let i = 0; i < this.respostaveiculo.length; i++) {
-        // console.log(this.respostaveiculo[i].vehicle_id);
+
 
         if (this.respostaveiculo[i].vehicle_model === this.inputVeiculo) {
           this.inputVeiculoData = this.respostaveiculo[i].vehicle_id;
@@ -114,23 +119,21 @@ export class DashboardComponent {
           // this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
           // this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
 
-          // console.log(encontradoData);
-          // if (encontradoData) {
-          //   this.veiculoVin = encontradoData.vehicle_vin;
-          //   console.log(this.veiculoVin);
-          //   this.veiculoOdometro = encontradoData.vehicle_odometro;
-          //   this.veiculoStatus = encontradoData.vehicle_status;
-          //   this.veiculoCombustivel = encontradoData.vehicle_combustivel;
-          //   this.veiculoLatitude = encontradoData.vehicle_latitude;
-          //   this.veiculoLongitude = encontradoData.vehicle_longitude;
-          // }
+
         }
       }
 
+<<<<<<< HEAD
       
     };
 
     
+=======
+
+    };
+
+
+>>>>>>> 97879227d2aabad474b2a869c1e09e099e0c60b2
   }
   verificarInputVin!: any;
   verificarInput!: any;

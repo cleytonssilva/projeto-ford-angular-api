@@ -1,7 +1,13 @@
 import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule} from '@angular/router';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 export const routes: Routes = [
+
     {
         path: 'home',
         loadComponent: () => import('./componentes/home/home.component').then(c => c.HomeComponent)
@@ -23,6 +29,12 @@ export const routes: Routes = [
     },
 
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 
 
 
