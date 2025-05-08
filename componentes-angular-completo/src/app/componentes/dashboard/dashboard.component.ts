@@ -88,15 +88,31 @@ export class DashboardComponent {
           console.log(this.inputVeiculoData);
 
           this.veiculoVin = this.respostaveiculoData[i].vehicledata_vin;
-          // if (this.veiculoVin === this.inputVeiculoVin) {
-          //   this.veiculoVin = 'VIN não encontrado';
-          // }
+          function verificarInputVin({
+            veiculoVin,
+            inputVeiculoVin,
+          }: {
+            veiculoVin: string;
+            inputVeiculoVin: string;
+          }) {
+            return veiculoVin === inputVeiculoVin;
+          }
+          if (this.veiculoVin === this.inputVeiculoVin) {
+            
+            this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
+            this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
+            this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
+            this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
+            this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
+          } else {
+            this.veiculoVin = 'VIN não encontrado';
+          }
           // console.log(this.veiculoVin);
-          this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
-          this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
-          this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
-          this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
-          this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
+          // this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
+          // this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
+          // this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
+          // this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
+          // this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
 
           // console.log(encontradoData);
           // if (encontradoData) {
@@ -111,42 +127,12 @@ export class DashboardComponent {
         }
       }
 
-      // const encontradoData = this.respostaveiculoData.find(
-      //   (veiculoData: any) => veiculoData.vehicledata_id === encontrado.vehicle_id
-      // );
-
-      // for (let i = 0; i < this.respostaveiculo.length; i++) {
-
-      //   if (this.respostaveiculo[i].vehicle_model === this.inputVeiculo) {
-      //     this.inputVeiculoData = this.respostaveiculo[i].vehicle_id;
-      //     console.log(this.inputVeiculoData);
-      //     const encontradoData = this.respostaveiculoData[i].vehicledata_id;
-      //     console.log(encontradoData);}
-      // if (encontradoData) {
-      //   this.veiculoVin = encontradoData.vehicle_vin;
-      //   this.veiculoOdometro = encontradoData.vehicle_odometro;
-      //   this.veiculoStatus = encontradoData.vehicle_status;
-      //   this.veiculoCombustivel = encontradoData.vehicle_combustivel;
-      //   this.veiculoLatitude = encontradoData.vehicle_latitude;
-      //   this.veiculoLongitude = encontradoData.vehicle_longitude;
-
-      //   console.log(encontradoData.veiculoVin);
-      //   console.log(this.veiculoOdometro);
-      //   console.log(this.veiculoStatus);
-      //   console.log(this.veiculoCombustivel);
-      //   console.log(this.veiculoLatitude);
-      //   console.log(this.veiculoLongitude);
-
-      // }
+      
     };
 
-    // this.verificarInput = "";
-    // this.inputVeiculo = '';
-    // this.mostrarImagem = false;
-    // this.volumeVendas = 0;
-    // this.veiculosConectados = 0;
-    // this.veiculosUpdates = 0;
+    
   }
+  verificarInputVin!: any;
   verificarInput!: any;
   respostaveiculo!: any;
   respostaveiculoData!: any;
