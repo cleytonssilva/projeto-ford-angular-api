@@ -1,22 +1,24 @@
-<!-- <header>
-    <nav>
-      <img class="logo" src="\img\ford.png" alt="Logo Ford">
-      <h1>Olá, {{'usuario'}}</h1>
-      <button>Logout</button>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</header> -->
 
 <header>
-  <h1>Dashboard FORD</h1>
+  
   <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
     <div class="bg-dark p-4">
+      <img class="logo" src="/img/ford.png" alt="Logo Ford">
       <h5 class="text-body-emphasis h4">Olá, usuario.</h5>
       <span class="text-body-secondary">Seja bem-vindo.</span>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+      </ul>
+      <button class="logout-btn">Logout</button>
+
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -24,29 +26,10 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <button class="logout-btn">Logout</button>
+      <!-- <button class="logout-btn">Logout</button> -->
     </div>
   
   </nav>
-  
-    
-    
-  
 
 </header>
-
-<!-- <div class="side-nav">
-  <header>
-    <img class="logo" src="/img/ford.png" alt="Logo Ford">
-    <h1>Olá, {{ 'usuario' }}</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
-  </nav>
-  <button class="logout-btn">Logout</button>
-</div> -->
 

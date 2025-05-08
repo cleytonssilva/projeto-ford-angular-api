@@ -1,29 +1,7 @@
 
 
   <app-scroll-nav-bar></app-scroll-nav-bar>
-  
-  <!-- <div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title">Total de Vendas</h5>
-    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-    <p class="card-text" *ngIf="mostrarImagem"> {{ volumeVendas }}</p>
-  </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title">Conectados</h5>
-    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-    <p class="card-text" *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
-  </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title">Update Software</h5>
-    <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-    <p *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
-  </div>
-  </div> -->
-
+  <h1>Dashboard FORD</h1>
   <div class="row">
     <div class="col-sm-4 mb-3 mb-sm-0">
       <div class="card">
@@ -53,17 +31,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-  
-  
-
-
-
-
 
   <section>
     <!-- <input [ngModel]="inputVeiculo" type="text" placeholder="Buscar" class="input-veiculo" id="input-veiculo" > -->
@@ -109,25 +76,61 @@
     />
   </section>
 
-
-
-<!-- <h2>Informações do Veículo</h2> -->
-  <!-- <div class="card">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+  <div class="row">
+    <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
     <button class="btn btn-outline-success" type="submit">Search</button>
-    <p>Código Vin:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoVin }}</p>
-    <p>Odômetro:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoOdometro }}</p>
-    <p>Nível Combustível:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoCombustivel }}</p>
-    <p>Status:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoStatus }}</p>
-    <p>Latitude:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
-    <p>Longitude:</p>
-    <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
+    <p>Código Vin:</p> -->
     
-    
-
-    </div> -->
+      
+      
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button> -->
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Odômetro</h5>
+              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+              <p *ngIf="mostrarImagem">{{ veiculoOdometro }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Nível Combustível:</h5>
+              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+              <p *ngIf="mostrarImagem">{{ veiculoCombustivel }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Status:</h5>
+              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+              <p *ngIf="mostrarImagem">{{ veiculoStatus }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Latitude:</h5>
+              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+              <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Longitude:</h5>
+              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
+              <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-auto ">
+      </div>
+  </div>
+  
