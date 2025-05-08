@@ -22,6 +22,7 @@ export class DashboardComponent {
   veiculoCombustivel: string = '';
   veiculoLatitude: string = '';
   veiculoLongitude: string = '';
+  inputVeiculoVin: string = '';
 
   async ngOnInit() {
     fetch('http://localhost:3000/api/table/VEHICLE')
@@ -87,6 +88,10 @@ export class DashboardComponent {
           console.log(this.inputVeiculoData);
 
           this.veiculoVin = this.respostaveiculoData[i].vehicledata_vin;
+          // if (this.veiculoVin === this.inputVeiculoVin) {
+          //   this.veiculoVin = 'VIN não encontrado';
+          // }
+          // console.log(this.veiculoVin);
           this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
           this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
           this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
