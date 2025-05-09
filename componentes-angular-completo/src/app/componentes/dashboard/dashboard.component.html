@@ -1,134 +1,144 @@
+<app-scroll-nav-bar></app-scroll-nav-bar>
+<h1>Dashboard FORD</h1>
+<div class="row">
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          [(ngModel)]="inputVeiculo"
+          id="select-veiculo"
+          [ngModel]="inputVeiculo"
+          (change)="verificarInput()"
+        >
+          <option value="" disabled selected>Veículo</option>
+          <option value="Ranger">Ranger</option>
+          <option value="Mustang">Mustang</option>
+          <option value="Territory">Territory</option>
+          <option value="Bronco Sport">Bronco Sport</option>
+        </select>
 
-
-  <app-scroll-nav-bar></app-scroll-nav-bar>
-  <h1>Dashboard FORD</h1>
-  <div class="row">
-    <div class="col-sm-4 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Total de Vendas</h5>
-          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-          <p class="card-text" *ngIf="mostrarImagem"> {{ volumeVendas }}</p>
-        </div>
       </div>
     </div>
-    <div class="col-sm-4 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Conectados</h5>
-          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-          <p class="card-text" *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
-        </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total de Vendas</h5>
+        <p class="card-text" *ngIf="!mostrarImagem">***********</p>
+        <p class="card-text" *ngIf="mostrarImagem">{{ volumeVendas }}</p>
       </div>
     </div>
-    <div class="col-sm-4 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Update Sotware</h5>
-          <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-          <p class="card-text" *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
-        </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Conectados</h5>
+        <p class="card-text" *ngIf="!mostrarImagem">***********</p>
+        <p class="card-text" *ngIf="mostrarImagem">{{ veiculosConectados }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Update Sotware</h5>
+        <p class="card-text" *ngIf="!mostrarImagem">***********</p>
+        <p class="card-text" *ngIf="mostrarImagem">{{ veiculosUpdates }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+
+  <img
+    *ngIf="mostrarImagem && inputVeiculo === 'Mustang'"
+    class="img-dashboard"
+    src="/img/mustang.png"
+    alt="Ford Mustang"
+  />
+  <img
+    *ngIf="mostrarImagem && inputVeiculo === 'Territory'"
+    class="img-dashboard"
+    src="/img/territory.png"
+    alt="Ford Territory"
+  />
+  <img
+    *ngIf="mostrarImagem && inputVeiculo === 'Bronco Sport'"
+    class="img-dashboard"
+    src="/img/broncoSport.png"
+    alt="Ford Bronco Sport"
+  />
+  <img
+    *ngIf="mostrarImagem && inputVeiculo === 'Ranger'"
+    class="img-dashboard"
+    src="/img/ranger.png"
+    alt="Ford Ranger"
+  />
+</section>
+
+<div class="row">
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-footer">
+        <input
+          class="form-control me-"
+          type="search"
+          placeholder="Código-Vin"
+          aria-label="Search"
+          (change)="verificarInputVin()"
+          [(ngModel)]="inputVeiculoVin"
+          id="input-vin"
+        />
       </div>
     </div>
   </div>
 
-  <section>
-    <select
-      class="select-veiculo"
-      id="select-veiculo"
-      [ngModel]="inputVeiculo"
-      (ngModelChange)="mostrarImagem = false; inputVeiculo = $event"
-    >
-      <option value="" disabled selected>Veículo</option>
-      <option value="Ranger">Ranger</option>
-      <option value="Mustang">Mustang</option>
-      <option value="Territory">Territory</option>
-      <option value="Bronco Sport">Bronco Sport</option>
-    </select>
-    <button class="btn-search" (click)="verificarInput()">Buscar</button>
-    <!-- <button **ngIf="select-veiculo" class="btn-search" click="verificarInput()" >Buscar</button> -->
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Mustang'"
-      class="img-dashboard"
-      src="/img/mustang.png"
-      alt="Ford Mustang"
-    />
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Territory'"
-      class="img-dashboard"
-      src="/img/territory.png"
-      alt="Ford Territory"
-    />
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Bronco Sport'"
-      class="img-dashboard"
-      src="/img/broncoSport.png"
-      alt="Ford Bronco Sport"
-    />
-    <img
-      *ngIf="mostrarImagem && inputVeiculo === 'Ranger'"
-      class="img-dashboard"
-      src="/img/ranger.png"
-      alt="Ford Ranger"
-    />
-  </section>
-
-  <div class="row">
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-footer">
-              <input class="form-control me-" type="search" placeholder="Código-Vin" aria-label="Search"/>
-              <button (click)="verificarInputVin()" class="btn btn-outline-dark" type="submit">Buscar</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Odômetro</h5>
-              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-              <p *ngIf="mostrarImagem">{{ veiculoOdometro }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Nível Combustível:</h5>
-              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-              <p *ngIf="mostrarImagem">{{ veiculoCombustivel }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Status:</h5>
-              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-              <p *ngIf="mostrarImagem">{{ veiculoStatus }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Latitude:</h5>
-              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-              <p *ngIf="mostrarImagem">{{ veiculoLatitude}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-2 mb-1 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Longitude:</h5>
-              <p class="card-text" *ngIf="!mostrarImagem" >***********</p>
-              <p *ngIf="mostrarImagem">{{ veiculoLongitude }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-auto ">
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Odômetro</h5>
+        <p class="card-text" *ngIf="!inputVeiculoVin">***********</p>
+        <p class="card-text" *ngIf="inputVeiculoVin">{{ veiculoOdometro }}</p>
       </div>
+    </div>
   </div>
-
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Nível Combustível:</h5>
+        <p class="card-text" *ngIf="!inputVeiculoVin">***********</p>
+        <p class="card-text" *ngIf="inputVeiculoVin">{{ veiculoCombustivel }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Status:</h5>
+        <p class="card-text" *ngIf="!inputVeiculoVin">***********</p>
+        <p class="card-text" *ngIf="inputVeiculoVin">{{ veiculoStatus }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Latitude:</h5>
+        <p class="card-text" *ngIf="!inputVeiculoVin">***********</p>
+        <p class="card-text" *ngIf="inputVeiculoVin">{{ veiculoLatitude }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 mb-1 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Longitude:</h5>
+        <p class="card-text" *ngIf="!inputVeiculoVin">***********</p>
+        <p class="card-text" *ngIf="inputVeiculoVin">{{ veiculoLongitude }}</p>
+      </div>
+    </div>
+  </div>
+</div>

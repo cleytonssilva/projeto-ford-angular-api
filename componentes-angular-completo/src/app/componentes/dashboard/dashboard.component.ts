@@ -23,6 +23,12 @@ export class DashboardComponent {
   veiculoLatitude: string = '';
   veiculoLongitude: string = '';
   inputVeiculoVin: string = '';
+  mostrarDados: boolean = false;
+
+  respostaveiculo: any[] = [];
+  respostaveiculoData: any[] = [];
+
+
 
   async ngOnInit() {
     fetch('http://localhost:3000/api/table/VEHICLE')
@@ -45,24 +51,15 @@ export class DashboardComponent {
         this.respostaveiculoData = respostaData;
         this.inputVeiculoData = respostaData.vehicledata_id;
 
-        // console.log(this.respostaveiculoData);
-        // for (let i = 0; i < this.respostaveiculoData.length; i++) {
-        //   console.log(this.respostaveiculoData[i].vehicledata_id);
-
-        //   if (this.respostaveiculo.vehicle_id === this.respostaveiculoData[i].vehicledata_id) {
-        //     this.inputVeiculoData = this.respostaveiculoData[i].vehicledata_id;
-        //     console.log(this.inputVeiculoData);
-        //   }
-
-        // }
       })
       .catch((error) => {
         console.error('Erro ao buscar dados:', error);
       });
+  }
 
-    this.verificarInput = () => {
-      const encontrado = this.respostaveiculo.find(
-        (veiculo: any) => veiculo.vehicle_model === this.inputVeiculo
+  verificarInput = () => {
+    const encontrado = this.respostaveiculo.find(
+      (veiculo: any) => veiculo.vehicle_model === this.inputVeiculo
       );
 
       if (encontrado) {
@@ -73,70 +70,87 @@ export class DashboardComponent {
 
         // Exibe a imagem correspondente
         this.mostrarImagem = true;
-      }
+    }
+  } // Verifica se o VIN corresponde ao modelo do veículo
+    // this.verificarInputVin = () => {
 
-      // Verifica se o VIN está na lista de dados dos veículos
-      // const vinEncontrado = this.respostaveiculo.find(
-      //   (veiculoVin: any) => veiculo.vehicledata_vin === this.inputVeiculoVin
-      // );
-      // if (vinEncontrado) {
-      //   this.mostrarDados = true;
-      // } else {
-      //   this.mostrarDados = false;
+
+
+
+
+
+  verificarInputVin = () => {
+    const vinEncontrado = this.respostaveiculoData.find(
+      (veiculo: any) => veiculo.vehicledata_vin === this.inputVeiculoVin
+      );
+
+      console.log(vinEncontrado);
+
+
+      if (vinEncontrado) {
+        this.veiculoOdometro = vinEncontrado.vehicledata_odometer;
+        console.log(this.veiculoOdometro);
+
+        this.veiculoStatus = vinEncontrado.vehicledata_status;
+        this.veiculoCombustivel = vinEncontrado.vehicledata_fuelLevel;
+        this.veiculoLatitude = vinEncontrado.vehicledata_lat;
+        this.veiculoLongitude = vinEncontrado.vehicledata_long;
+
+        this.mostrarDados = true;
+      }
+      // Verifica se o VIN corresponde ao modelo do veículo
+      else {
+        alert('VIN não encontrado');
+        this.veiculoOdometro = '';
+        this.veiculoStatus = '';
+        this.veiculoCombustivel = '';
+        this.veiculoLatitude = '';
+        this.veiculoLongitude = '';
+        this.mostrarDados = false;
+
+      }
+    }
+
+
+    };
+
+
+//   }
+//   vinEncontrado!: any;
+//   verificarInputVin!: any;
+//   verificarInput!: any;
+//   respostaveiculo!: any;
+//   respostaveiculoData!: any;
+// }
+
+
+
+      // for (let i = 0; i < this.respostaveiculo.length; i++) {
+      //   Verifica se o modelo do veículo corresponde ao input
+      //   if (this.respostaveiculo[i].vehicle_model === this.inputVeiculoVin) {
+      //     this.inputVeiculoData = this.respostaveiculo[i].vehicle_id;
+      //     console.log(this.inputVeiculoData);
+
+      //     this.veiculoVin = this.respostaveiculoData[i].vehicledata_vin;
+      //     function verificarInputVin({
+      //       veiculoVin,
+      //       inputVeiculoVin,
+      //     }: {
+      //       veiculoVin: string;
+      //       inputVeiculoVin: string;
+      //     }) {
+      //       return veiculoVin === inputVeiculoVin;
+      //     }
+      //     if (this.veiculoVin === this.inputVeiculoVin) {
+
+      //       this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
+      //       this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
+      //       this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
+      //       this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
+      //       this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
+      //     } else {
+      //       this.veiculoVin = 'VIN não encontrado';
+      //     }
+
+      //   }
       // }
-
-      for (let i = 0; i < this.respostaveiculo.length; i++) {
-
-
-        if (this.respostaveiculo[i].vehicle_model === this.inputVeiculo) {
-          this.inputVeiculoData = this.respostaveiculo[i].vehicle_id;
-          console.log(this.inputVeiculoData);
-
-          this.veiculoVin = this.respostaveiculoData[i].vehicledata_vin;
-          function verificarInputVin({
-            veiculoVin,
-            inputVeiculoVin,
-          }: {
-            veiculoVin: string;
-            inputVeiculoVin: string;
-          }) {
-            return veiculoVin === inputVeiculoVin;
-          }
-          if (this.veiculoVin === this.inputVeiculoVin) {
-            
-            this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
-            this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
-            this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
-            this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
-            this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
-          } else {
-            this.veiculoVin = 'VIN não encontrado';
-          }
-          // console.log(this.veiculoVin);
-          // this.veiculoOdometro = this.respostaveiculoData[i].vehicledata_odometer;
-          // this.veiculoStatus = this.respostaveiculoData[i].vehicledata_status;
-          // this.veiculoCombustivel = this.respostaveiculoData[i].vehicledata_fuelLevel;
-          // this.veiculoLatitude = this.respostaveiculoData[i].vehicledata_lat;
-          // this.veiculoLongitude = this.respostaveiculoData[i].vehicledata_long;
-
-
-        }
-      }
-
-<<<<<<< HEAD
-      
-    };
-
-    
-=======
-
-    };
-
-
->>>>>>> 97879227d2aabad474b2a869c1e09e099e0c60b2
-  }
-  verificarInputVin!: any;
-  verificarInput!: any;
-  respostaveiculo!: any;
-  respostaveiculoData!: any;
-}
