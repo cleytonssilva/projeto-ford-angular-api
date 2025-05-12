@@ -1,0 +1,45 @@
+
+.container {
+
+    /* display: flex;
+    flex-direction: column; */
+    /* gap: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    border-radius: 16px;
+    background: #F8F9FA;
+    margin-bottom: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(61, 139, 253, 0.15);
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 56px 134px;
+    margin-top: 0 auto;
+    box-sizing: border-box; */
+    position: absolute; /* Sobrepõe a imagem */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o alinhamento */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 80px 80px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    z-index: 2; /* Garante que o pop-up fique acima da imagem */
+    text-align: center; /* Centraliza o texto */
+}
+
+main {
+    display: flex;
+    flex-direction:block;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+}
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}

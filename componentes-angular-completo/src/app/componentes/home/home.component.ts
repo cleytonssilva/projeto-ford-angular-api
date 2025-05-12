@@ -1,44 +1,20 @@
-// import { Component } from '@angular/core';
-
-
-// @Component({
-//   selector: 'app-home',
-//   imports: [],
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.css',]
-// })
-// export class HomeComponent {
-
-// }
-
-import { Component, OnInit } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
+import { Component } from '@angular/core';
+import { ScrollNavBarComponent } from '../scroll-nav-bar/scroll-nav-bar.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DatabaseService } from '../../services/database.service';
+import{ OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
+  imports: [ScrollNavBarComponent,CommonModule, FormsModule],
   templateUrl: './home.component.html',
-  imports: [CommonModule,FormsModule],
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css',]
 })
-export class HomeComponent implements OnInit {
-  tables: any[] = [];
+export class HomeComponent {
 
-  constructor(private databaseService: DatabaseService) {}
-
-  ngOnInit(): void {
-    this.loadTables();
-  }
-
-  loadTables(): void {
-    this.databaseService.getTables().subscribe({
-      next: (data) => {
-        this.tables = data;
-      },
-      error: (err) => {
-        console.error('Erro ao carregar tabelas:', err);
-      }
-    });
-  }
 }
+
+
+

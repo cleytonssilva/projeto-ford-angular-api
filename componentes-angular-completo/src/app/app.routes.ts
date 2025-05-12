@@ -4,11 +4,13 @@ import { RouterModule} from '@angular/router';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { HomeComponent } from './componentes/home/home.component';
 
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }, // Aplicando o AuthGuard
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Aplicando o AuthGuard
 
     // {

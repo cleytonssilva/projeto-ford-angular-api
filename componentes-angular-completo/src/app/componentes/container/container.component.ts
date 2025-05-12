@@ -25,7 +25,7 @@ export class ContainerComponent {
     const logarAuto = localStorage.getItem('logarAuto');
     if (logarAuto === 'true') {
       sessionStorage.setItem('token', 'fake-jwt-token');
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
     }
     fetch('http://localhost:3000/api/table/user')
       .then(async (response) => {
@@ -62,12 +62,20 @@ export class ContainerComponent {
   onSubmit() {
     // Simulação de autenticação
     if (
-      this.inputEmail === 'admin@example.com' &&
-      this.inputPassword === 'password'
+      this.inputEmail === 'admin@ford.com' &&
+      this.inputPassword === '123456'
     ) {
+      sessionStorage.setItem('token', 'fake-jwt-token');
+      this.router.navigate(['/home']);
+
+    } else if(
+      this.inputEmail === 'diogo@ford.com' &&
+      this.inputPassword === '1234'
+    )
+    {
       // Armazenar o token no localStorage
       sessionStorage.setItem('token', 'fake-jwt-token');
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
     } else {
       alert('Credenciais inválidas');
     }

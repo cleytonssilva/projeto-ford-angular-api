@@ -1,20 +1,19 @@
-<header>
-    <!-- <app-scroll-nav-bar></app-scroll-nav-bar> -->
-</header>
-<body>
-    <main>
-        <img class="img-fundo" src="/img/ranger.png" alt="Logo Ford">
+
+
+  <app-scroll-nav-bar></app-scroll-nav-bar>
+  <main>
+    <section>
+      <img class="img-fundo" src="/img/ranger.png" alt="Logo Ford">
+    </section>
+    <div class="container">
         <section>
+          <div class="card-header">
             <h2>Sistemas de Dados  Ford</h2>
-            <h3>Seja bem vindo(a)!</h3>
+          </div>
+          <div class="card-text">
+            <h3 style="color:#0056b3 ;">Seja bem vindo(a)!</h3>
+          </div>
         </section>
-        <div>
-          <h1>Tabelas do Banco de Dados</h1>
-          <ul>
-            <li *ngFor="let table of tables">
-              {{ table.username }} - {{ table.password }}
-            </li>
-          </ul>
-        </div>
-    </main>
-</body>
+    </div>
+  </main>
+

@@ -40,41 +40,45 @@ router.get("/table/:tableName", async (req, res) => {
 
 
 // Rota GET /sobre
-router.get("/sobre", (req, res) => {
-  res.send("Página Sobre");
-});
+// router.get("/sobre", (req, res) => {
+//   res.send("Página Sobre");
+// });
 
 // Rota GET /usuarios (retorna lista fictícia)
-router.get("/usuarios", (req, res) => {
-  const usuarios = [
-    { nome: "Maria", idade: 25 },
-    { nome: "João", idade: 30 }
-  ];
-  res.json(usuarios); // Envia JSON
-});
+// router.get("/usuarios", (req, res) => {
+//   const usuarios = [
+//     { nome: "Maria", idade: 25 },
+//     { nome: "João", idade: 30 }
+//   ];
+//   res.json(usuarios); 
+//   Envia JSON
+// });
 
 // Rota POST /usuarios (recebe dados)
-router.post("/usuarios", (req, res) => {
-  console.log("Dados recebidos:", req.body); // Exibe no terminal
-  res.json({ 
-    success: true,
-    data: req.body 
-  });
-});
+// router.post("/usuarios", (req, res) => {
+//   console.log("Dados recebidos:", req.body);
+//   Exibe no terminal
+//   res.json({ 
+//     success: true,
+//     data: req.body 
+//   });
+// });
 
 // Rota POST /dados (exemplo alternativo)
-router.post("/dados", (req, res) => {
-  const { nome, idade } = req.body; // Extrai do corpo da requisição
-  console.log("Nome:", nome, "Idade:", idade); // Exibe corretamente
-  res.json({ 
-    mensagem: "Dados recebidos com sucesso!",
-    nome,
-    idade
-  });
-});
+// router.post("/dados", (req, res) => {
+//   const { nome, idade } = req.body; 
+//   Extrai do corpo da requisição
+//   console.log("Nome:", nome, "Idade:", idade); 
+//   Exibe corretamente
+//   res.json({ 
+//     mensagem: "Dados recebidos com sucesso!",
+//     nome,
+//     idade
+//   });
+// });
 
-router.get("/dados", (req, res) => {
-    res.send("Esta é a página de dados (acessível via GET)");
-  });
+// router.get("/dados", (req, res) => {
+//     res.send("Esta é a página de dados (acessível via GET)");
+//   });
 
 module.exports = router;
